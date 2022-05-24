@@ -426,7 +426,7 @@ WIN_CreateWindowFrom(_THIS, SDL_Window * window, const void *data)
     SDL_bool isstack;
 
     /* Query the title from the existing window */
-    titleLen = GetWindowTextLength(hwnd);
+    /*titleLen = GetWindowTextLength(hwnd);
     title = SDL_small_alloc(TCHAR, titleLen + 1, &isstack);
     if (title) {
         titleLen = GetWindowText(hwnd, title, titleLen + 1);
@@ -439,7 +439,7 @@ WIN_CreateWindowFrom(_THIS, SDL_Window * window, const void *data)
     if (title) {
         SDL_small_free(title, isstack);
     }
-
+	*/
     if (SetupWindowData(_this, window, hwnd, GetParent(hwnd), SDL_FALSE) < 0) {
         return -1;
     }
@@ -1163,7 +1163,7 @@ void
 WIN_AcceptDragAndDrop(SDL_Window * window, SDL_bool accept)
 {
     const SDL_WindowData *data = (SDL_WindowData *) window->driverdata;
-    DragAcceptFiles(data->hwnd, accept ? TRUE : FALSE);
+    //DragAcceptFiles(data->hwnd, accept ? TRUE : FALSE);
 }
 
 int
